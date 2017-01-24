@@ -25,19 +25,21 @@ var Tree = function(value){
   this.children = [];
 };
 
+//Code this
 Tree.prototype.DFSelect = function(filter) {
   let storage = [];
   let traverse = (node, depth) => {
     if(filter(node.value, depth)) {
       storage.push(node.value);
     }
-    node.forEach((child) => {
-      depth++;
+    node.children.forEach((child) => {
       traverse(child, depth+1)
     })
   }
+  traverse(this, 0);
   return storage;
 };
+//
 
 Tree.prototype.addChild = function(child){
   if (!child || !(child instanceof Tree)){
