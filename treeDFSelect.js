@@ -26,16 +26,14 @@ var Tree = function(value){
 };
 
 Tree.prototype.DFSelect = function(filter) {
-  let depth = 0;
   let storage = [];
-  let traverse = (node) => {
+  let traverse = (node, depth) => {
     if(filter(node.value, depth)) {
       storage.push(node.value);
     }
     node.forEach((child) => {
       depth++;
-      traverse(child)
-      depth--;
+      traverse(child, depth+1)
     })
   }
   return storage;
