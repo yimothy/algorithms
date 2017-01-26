@@ -7,23 +7,23 @@ var treeMaker = function(value){
   newTree.children = [];
   return newTree;
 };
+
 treeMaker.methods = {};
+
 treeMaker.methods.addChild = function(value){
   var node = treeMaker(value);
-// Write your code here
   this.children.push(node);
 }
+
 treeMaker.methods.contains = function(value){
   if(this.value === value) {
     return true;
   }
   let contain = false;
   this.children.forEach(function(child) {
-  	console.log('in child')
     if(child.contains(value)) {
     	contain = true;
-    };
+    }
   })
   return contain;
-// Write your code here
 }
