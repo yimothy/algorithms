@@ -17,8 +17,13 @@ treeMaker.methods.contains = function(value){
   if(this.value === value) {
     return true;
   }
+  let contain = false;
   this.children.forEach(function(child) {
-    child.contains(value);
+  	console.log('in child')
+    if(child.contains(value)) {
+    	contain = true;
+    };
   })
+  return contain;
 // Write your code here
 }
