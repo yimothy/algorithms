@@ -14,12 +14,11 @@ treeMaker.methods.addChild = function(value){
   this.children.push(node);
 }
 treeMaker.methods.contains = function(value){
-  if(this.value === value) return true;
-  this.children.forEach((child) => {
-    if(child.contains(value)) return true;
-
+  if(this.value === value) {
+    return true;
+  }
+  this.children.forEach(function(child) {
+    child.contains(value);
   })
-
-
 // Write your code here
 }
