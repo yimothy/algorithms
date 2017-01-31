@@ -33,7 +33,7 @@ function sumConsecPlus(array, s, e) {
       i++;
     }
     result.push(numTimes*curr);
-    numTimes = 0;
+    numTimes = 1;
     i++;
   }
   return result;
